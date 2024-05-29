@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button.no {
+            background-color: #f44336;
+        }
+        #second-question {
+            margin-top: 20px;
+        }
+        #second-question img, #third-question img {
+            width: 300px;
+            height: auto;
+        }
+        #message-container, #no-message-container, #third-question-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="first-question">
+    <h1>Curioso para saber onde vai ser a vivência 3.0 ?</h1>
+    <button onclick="showSecondQuestion()">Sim</button>
+    <button class="no" onclick="no()">Não</button>
+</div>
+
+<div class="container hidden" id="second-question">
+    <img src="2.gif" alt="GIF">
+    <p>Está disponível para mais um sequestro, sábado ou domingo na Faria Lima as 14 hrs?</p>
+    <button onclick="showThirdContainer()">Sim</button>
+    <button class="no" onclick="sendNoMessage()">Não</button>
+</div>
+
+<div class="container hidden" id="third-question-container">
+    <img src="3.webp" alt="GIF" style="width: 300px;" >
+    <p style="margin-left: 180px; margin-right: 100px; font-size: 12px;">ae, rlx eu sei q vc ta economizando pra música só vem com a doida confia, e ñ, ñ vou te falar a onde a gnt vai<br></p>
+    <button onclick="redirectToMessageContainer()">clica em mim</button>
+</div>
+
+<div class="container hidden" id="message-container">
+    <p>A doida vai te redirecionar pro Whats, com a sua resposta, só não esquece de clicar pra enviar cabeção!</p>
+    <button onclick="openWhatsApp()">Enviar</button>
+</div>
+
+<div class="container hidden" id="no-message-container">
+    <p>afeeeeeeeeeee</p>
+</div>
+
+<script>
+    function showSecondQuestion() {
+        document.getElementById('first-question').classList.add('hidden');
+        document.getElementById('second-question').classList.remove('hidden');
+    }
+
+    function showThirdContainer() {
+        document.getElementById('second-question').classList.add('hidden');
+        document.getElementById('third-question-container').classList.remove('hidden');
+    }
+
+    function redirectToMessageContainer() {
+        document.getElementById('third-question-container').classList.add('hidden');
+        document.getElementById('message-container').classList.remove('hidden');
+    }
+
+    function sendNoMessage() {
+        var phoneNumber = '5511966648300'; // Número de telefone com o código de área 11
+        var message = 'vai dar não'; // Mensagem para enviar
+
+        // Formatar o link do WhatsApp
+        var whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+
+        // Redirecionar para o WhatsApp
+        window.location.href = whatsappLink;
+    }
+
+    function no() {
+        alert('Ah, que pena! Fica para a próxima.');
+    }
+
+    function openWhatsApp() {
+        var phoneNumber = '5511966648300'; // Número de telefone com o código de área 11
+        var message = 'Sim, to disponível fim de semana kkkkkkkk'; // Mensagem para enviar
+
+        // Formatar o link do WhatsApp
+        var whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+
+        // Redirecionar para o WhatsApp
+        window.location.href = whatsappLink;
+    }
+</script>
+
+</body>
+</html>

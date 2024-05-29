@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .gif-container {
+            text-align: center;
+        }
+        .gif-container img {
+            width: 300px;
+            height: auto;
+        }
+        .gif-container h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .button-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+        .button-container p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <h1>Olá João Pedro</h1>
+        <img src="1.gif" alt="GIF">
+    </div>
+    <div class="button-container">
+        <p>Clica no botão azul ai em baixo pra me dar "oi"</p>
+        <button onclick="redirect()">Oi Doida</button>
+    </div>
+
+    <script>
+        function redirect() {
+            window.location.href = "Index2.html";
+        }
+    </script>
+</body>
+</html>
